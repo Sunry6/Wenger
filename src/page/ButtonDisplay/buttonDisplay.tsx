@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../components/Button/button'
-import { ButtonSize, ButtonType } from '../components/Button/interface'
+import { Button } from '../../components/Button/button'
+import { ButtonSize, ButtonType } from '../../components/Button/interface'
 
 export const ButtonDisplay: React.FC = () => {
   return (
