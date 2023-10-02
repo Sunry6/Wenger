@@ -21,6 +21,7 @@ export interface MenuItemProps {
 export interface IMenuContext {
   index: number
   onSelect?: SelectCallBack
+  mode?: MenuMode
 }
 
 export interface SubMenuProps {

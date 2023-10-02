@@ -8,7 +8,7 @@ export const Menu: React.FC<MenuProps> = props => {
   const { className, mode, style, children, defaultIndex, onSelect } = props
   const [currentActive, setCurrentActive] = useState(defaultIndex)
 
-  const classes = cls('menu-item submenu-item', className, {
+  const classes = cls('menu', className, {
     'menu-vertical': mode === 'vertical',
     'menu-horizontal': mode !== 'vertical',
   })
@@ -23,6 +23,7 @@ export const Menu: React.FC<MenuProps> = props => {
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
+    mode: mode,
   }
 
   const renderChildren = () => {
@@ -30,6 +31,7 @@ export const Menu: React.FC<MenuProps> = props => {
       const childElement =
         child as React.FunctionComponentElement<MenuItemProps>
       const { displayName } = childElement.type
+
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         return React.cloneElement(childElement, { index })
       } else {

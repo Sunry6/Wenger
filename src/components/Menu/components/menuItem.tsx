@@ -4,7 +4,7 @@ import { MenuItemProps } from '../interface'
 import { MenuContext } from '../menu'
 
 export const MenuItem: React.FC<MenuItemProps> = props => {
-  const { className, style, children, index, disabled } = props
+  const { index, disabled, className, style, children } = props
   const context = useContext(MenuContext)
 
   const classes = cls('menu-item', className, {

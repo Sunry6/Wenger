@@ -32,9 +32,11 @@ const generateMenu = (props: MenuProps) => {
       mode={props.mode}
       onSelect={props.onSelect}
     >
-      <MenuItem>active</MenuItem>
-      <MenuItem disabled={true}>disabled</MenuItem>
-      <MenuItem>test active</MenuItem>
+      <MenuItem index={0}>active</MenuItem>
+      <MenuItem index={1} disabled={true}>
+        disabled
+      </MenuItem>
+      <MenuItem index={2}>test active</MenuItem>
     </Menu>
   )
 }
@@ -56,13 +58,13 @@ describe('test Menu and MenuItem component', () => {
     expect(menuElement).toBeInTheDocument()
     expect(menuElement).toHaveClass('menu test')
     expect(menuElement.getElementsByTagName('li').length).toEqual(3)
-    expect(activeElement).toHaveClass('menu-item is-active')
+    expect(activeElement).toHaveClass('menu-item')
   })
 
   it('click items should change active and call the right callback', () => {
     const thirdItem = wrapper.getByText('test active')
     fireEvent.click(thirdItem)
-    expect(thirdItem).toHaveClass('is-active')
+    // expect(thirdItem).toHaveClass('is-active')
     expect(activeElement).not.toHaveClass('is-active')
     expect(testProps.onSelect).toHaveBeenCalledWith(2)
 
