@@ -2,7 +2,6 @@ import React, { useContext, FunctionComponentElement, useState } from 'react'
 import cls from 'classnames'
 import { MenuContext } from '../menu'
 import { MenuItemProps, SubMenuProps } from '../interface'
-import { openStdin } from 'process'
 
 export const SubMenu: React.FC<SubMenuProps> = props => {
   const { index, title, children, className } = props
@@ -23,7 +22,7 @@ export const SubMenu: React.FC<SubMenuProps> = props => {
     setMenuOpen(!menuOpen)
   }
 
-  let timer: any
+  let timer: unknown
   const handleMouse = (e: React.MouseEvent, toggle: boolean) => {
     clearTimeout(timer)
     e.preventDefault()
