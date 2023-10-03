@@ -11,14 +11,14 @@ import { Menu } from './menu'
 import { MenuItem } from './components/menuItem'
 
 const testProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   onSelect: jest.fn(),
   className: 'test',
   mode: 'vertical',
 }
 
 const testVerProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   onSelect: jest.fn(),
   className: 'test',
   mode: 'vertical',
@@ -28,15 +28,15 @@ const generateMenu = (props: MenuProps) => {
   return (
     <Menu
       className={props.className}
-      defaultIndex={0}
+      defaultIndex={'0'}
       mode={props.mode}
       onSelect={props.onSelect}
     >
-      <MenuItem index={0}>active</MenuItem>
-      <MenuItem index={1} disabled={true}>
+      <MenuItem index={'0'}>active</MenuItem>
+      <MenuItem index={'1'} disabled={true}>
         disabled
       </MenuItem>
-      <MenuItem index={2}>test active</MenuItem>
+      <MenuItem index={'2'}>test active</MenuItem>
     </Menu>
   )
 }

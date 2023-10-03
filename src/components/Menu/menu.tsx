@@ -2,10 +2,18 @@ import React, { createContext, useState } from 'react'
 import cls from 'classnames'
 import { IMenuContext, MenuItemProps, MenuProps } from './interface'
 
-export const MenuContext = createContext<IMenuContext>({ index: 0 })
+export const MenuContext = createContext<IMenuContext>({ index: '0' })
 
 export const Menu: React.FC<MenuProps> = props => {
-  const { className, mode, style, children, defaultIndex, onSelect } = props
+  const {
+    className,
+    mode,
+    style,
+    children,
+    defaultIndex,
+    onSelect,
+    defaultOpenSubMenus,
+  } = props
   const [currentActive, setCurrentActive] = useState(defaultIndex)
 
   const classes = cls('menu', className, {
@@ -13,7 +21,7 @@ export const Menu: React.FC<MenuProps> = props => {
     'menu-horizontal': mode !== 'vertical',
   })
 
-  const handleClick = (index: number) => {
+  const handleClick = (index: string) => {
     setCurrentActive(index)
     if (onSelect) {
       onSelect(index)
@@ -21,9 +29,10 @@ export const Menu: React.FC<MenuProps> = props => {
   }
 
   const passedContext: IMenuContext = {
-    index: currentActive ? currentActive : 0,
+    index: currentActive ? currentActive : '0',
     onSelect: handleClick,
-    mode: mode,
+    mode,
+    defaultOpenSubMenus,
   }
 
   const renderChildren = () => {
@@ -33,7 +42,7 @@ export const Menu: React.FC<MenuProps> = props => {
       const { displayName } = childElement.type
 
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
-        return React.cloneElement(childElement, { index })
+        return React.cloneElement(childElement, { index: index.toString() })
       } else {
         console.error(
           'Warning: Menu has a child which is not a MenuItem component',
@@ -52,6 +61,7 @@ export const Menu: React.FC<MenuProps> = props => {
 }
 
 Menu.defaultProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   mode: 'horizontal',
+  defaultOpenSubMenus: [],
 }

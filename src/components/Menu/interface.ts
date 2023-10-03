@@ -1,17 +1,18 @@
 type MenuMode = 'horizontal' | 'vertical'
-type SelectCallBack = (selectedIndex: number) => void
+type SelectCallBack = (selectedIndex: string) => void
 
 export interface MenuProps {
-  defaultIndex?: number
+  defaultIndex?: string
   className?: string
   mode: MenuMode
   style?: React.CSSProperties
   onSelect?: SelectCallBack
   children?: React.ReactNode
+  defaultOpenSubMenus?: string[]
 }
 
 export interface MenuItemProps {
-  index?: number
+  index?: string
   disabled?: boolean
   className?: string
   style?: React.CSSProperties
@@ -19,13 +20,14 @@ export interface MenuItemProps {
 }
 
 export interface IMenuContext {
-  index: number
+  index: string
   onSelect?: SelectCallBack
   mode?: MenuMode
+  defaultOpenSubMenus?: string[]
 }
 
 export interface SubMenuProps {
-  index?: number
+  index?: string
   title: string
   className?: string
   children?: any
