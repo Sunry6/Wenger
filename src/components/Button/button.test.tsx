@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { Button } from './button'
+import Button from './button'
 import { ButtonProps, ButtonSize, ButtonType } from './interface'
 
 const defaultProps = {
@@ -55,7 +55,7 @@ describe('test Button component', () => {
     render(
       <Button {...disabledProps} disabled={true}>
         Nice
-      </Button>
+      </Button>,
     )
     const element = screen.getByText('Nice') as HTMLButtonElement
     expect(element).toBeInTheDocument()

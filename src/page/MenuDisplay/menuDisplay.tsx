@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu } from '../../components/Menu/menu'
+import Menu from '../../components/Menu/menu'
 import { MenuItem } from '../../components/Menu/components/menuItem'
 import { SubMenu } from '../../components/Menu/components/subMenu'
 

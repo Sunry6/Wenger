@@ -33,13 +33,41 @@
 
   .submenu-item {
     position: relative;
+
+    .submenu-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-icon {
+      margin-left: 3px;
+    }
+
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .is-vertical {
+    .arrow-icon {
+      transform: rotate(0deg) !important;
+    }
+  }
+
+  .is-vertical.is-opened {
+    .arrow-icon {
+      transform: rotate(180deg) !important;
+    }
   }
 
   .submenu {
-    display: none;
+    opacity: 0;
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
+    transition: opacity 0.5s ease-in-out;
 
     .menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;
@@ -56,6 +84,7 @@
 
   .submenu.menu-opened {
     display: block;
+    opacity: 1;
   }
 }
 

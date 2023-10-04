@@ -7,7 +7,7 @@ import {
   cleanup,
 } from '@testing-library/react'
 import { MenuProps } from './interface'
-import { Menu } from './menu'
+import Menu from './menu'
 import { MenuItem } from './components/menuItem'
 
 const testProps: MenuProps = {

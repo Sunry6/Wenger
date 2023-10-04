@@ -4,7 +4,7 @@ import { IMenuContext, MenuItemProps, MenuProps } from './interface'
 
 export const MenuContext = createContext<IMenuContext>({ index: '0' })
 
-export const Menu: React.FC<MenuProps> = props => {
+const Menu: React.FC<MenuProps> = props => {
   const {
     className,
     mode,
@@ -65,3 +65,5 @@ Menu.defaultProps = {
   mode: 'horizontal',
   defaultOpenSubMenus: [],
 }
+
+export default Menu

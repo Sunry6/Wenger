@@ -1,12 +1,12 @@
+import React from 'react'
 import './App.css'
-import { ButtonDisplay } from './page/ButtonDisplay/buttonDisplay'
-import { MenuDisplay } from './page/MenuDisplay/menuDisplay'
+import { TransitionDisplay } from './page/TransitionDisplay/transitionDisplay'
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <MenuDisplay />
+    <div className="App">
+      <header className="App-header">
+        <TransitionDisplay />
       </header>
     </div>
   )

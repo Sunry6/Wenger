@@ -2,8 +2,9 @@ import React from 'react'
 import cls from 'classnames'
 import { ButtonProps, ButtonType } from './interface'
 
-export const Button: React.FC<ButtonProps> = props => {
-  const { btnType, className, disabled, size, children, href, ...restProps } = props
+const Button: React.FC<ButtonProps> = props => {
+  const { btnType, className, disabled, size, children, href, ...restProps } =
+    props
 
   // btn, btn-lg, btn-primary
   const classes = cls('btn', className, {
@@ -31,3 +32,5 @@ Button.defaultProps = {
   disabled: false,
   btnType: ButtonType.Default,
 }
+
+export default Button
