@@ -39,6 +39,29 @@ export const TransitionDisplay: React.FC = () => {
           </p>
         </div>
       </Transition>
+
+      <Transition in={show} timeout={300} animation="zoom-in-top" wrapper>
+        <div>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+          <p>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </p>
+        </div>
+      </Transition>
     </>
   )
 }
