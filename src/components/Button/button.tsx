@@ -2,7 +2,14 @@ import React from 'react'
 import cls from 'classnames'
 import { ButtonProps, ButtonType } from './interface'
 
-const Button: React.FC<ButtonProps> = props => {
+/**
+ * 页面中最常用的按钮元素，适合于完成特定的交互，支持HTML Button和a链接
+ * ### 引用方法
+ * ```js
+ * import { Button } from 'wenger'
+ * ```
+ */
+export const Button: React.FC<ButtonProps> = props => {
   const { btnType, className, disabled, size, children, href, ...restProps } =
     props
 

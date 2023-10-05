@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import cls from 'classnames'
 import Button from '../../components/Button/button'
 import { ButtonSize, ButtonType } from '../../components/Button/interface'
 import Transition from '../../components/Transition/transition'

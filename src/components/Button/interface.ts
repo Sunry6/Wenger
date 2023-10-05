@@ -21,8 +21,10 @@ export interface BaseButtonProps {
   href?: string
 }
 
-type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
+type NativeButtonProps = BaseButtonProps &
+  React.ButtonHTMLAttributes<HTMLElement>
 
-type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps &
+  React.AnchorHTMLAttributes<HTMLElement>
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
